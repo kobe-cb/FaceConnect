@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Defer allows connection to go from top to bottom-->
+    <script>
+        /*Passes roomID from backend as a string*/
+        const ROOM_ID = "<%= roomID %>"
+    </script>
+    <!--Connects Peer to frontend-->
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <!--load socket.io(all) into frontend, serving from server-->
+    <script src="/socket.io/socket.io.js" defer></script>
+    <!--Custom Script @ public-->
+    <script src="script.js" defer></script>
+    <title>Document</title>
+    <style>
+        #video-grid {
+            display: grid;
+            /* 300x300 square video */
+            grid-template-columns: repeat(auto-fill, 300px);
+            grid-auto-rows: 300px;
+        }
+
+        video {
+            /* Makes sure video is zoomed and cut if weird aspect ratio */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /*Who needs a css file tho*/
+        h1 {text-align: center; color: white; background: #1abc9c; padding: 20px; font-size: 40px;}
+        body{ background-color: #000000;}
+    </style>
+</head>
+<body>
+    <h1>Welcome to FaceConnect</h1>
+    <div id="video-grid"></div>
+</body>
+</html>
