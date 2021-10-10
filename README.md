@@ -1,6 +1,5 @@
 # FaceConnect
 
-# About
 Video conference app that utilizes Express Server, EJS, Socket.IO, UUID, and Peer JS. Allows multiple people to video chat on a webpage under the same network.
 
 # How To Run
